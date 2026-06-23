@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class CoreJavaBrushUp1 {
     public static void main(String[] args) {
         // TODO auto-generated method stub
@@ -40,6 +42,21 @@ public class CoreJavaBrushUp1 {
         for (String s : name) {
             System.out.println(s);
         }
+        System.out.println("-------------");
+
+        for (int i = 4; i >= 0; i--){
+            System.out.println(arr[i]);
+        }
+        System.out.println("-------------");
+
+        int zbir = 0;
+        for (int number : arr){
+            zbir = zbir + number;
+            System.out.println(zbir);
+        }
+        System.out.println("-------------");
+
+
 
 
     }
