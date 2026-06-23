@@ -42,7 +42,7 @@ public class SelIntroduction{
         driver1.close(); //Zatvara trenutni tab ili widnow
 //        driver1.quit(); //Zatvara sve browsere vezane za selenium instancu
 
-
+        //Nest is Section 3: Brush up Java Concepts for Selenium Automation
 
 
     }
