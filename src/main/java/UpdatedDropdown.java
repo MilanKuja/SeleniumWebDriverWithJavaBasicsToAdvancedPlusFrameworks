@@ -7,6 +7,14 @@ public class UpdatedDropdown {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+        driver.manage().window().maximize();
+
+        driver.findElement(By.xpath("//input[contains(@id, 'SeniorCitizenDiscount')]")).click();
+        System.out.println(driver.findElement(By.xpath("//input[contains(@id, 'SeniorCitizenDiscount')]")).isSelected());
+
+        System.out.println(driver.findElements(By.xpath("//input[@type='checkbox']")).size());
+
+
         driver.findElement(By.xpath("//div[@id = 'divpaxinfo']")).click();
         Thread.sleep(1000);
         int i = 1;
