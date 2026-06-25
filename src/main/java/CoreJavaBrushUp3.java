@@ -15,7 +15,7 @@ public class CoreJavaBrushUp3 {
         String[] splittedString = s.split("Kuja");
         System.out.println(splittedString[0].trim());
         System.out.println(splittedString[1].trim());
-        System.out.println(splittedString[1].trim());
+        System.out.println(splittedString[0].trim());
 
         System.out.println("----------");
         for (int i = 0; i < s.length();i++){
