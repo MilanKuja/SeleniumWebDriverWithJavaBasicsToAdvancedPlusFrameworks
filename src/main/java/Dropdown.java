@@ -21,5 +21,13 @@ public class Dropdown {
         // driver.quit();
 
         //Finished 57 lecture, moving on to 58 Parent-Child relationship locator to identify th object Uniquely
+
+        driver.findElement(By.cssSelector(".ui-state-default.ui-state-active")).click(); //selected active date
+
+
+
+
+
+        driver.quit();
     }
 }

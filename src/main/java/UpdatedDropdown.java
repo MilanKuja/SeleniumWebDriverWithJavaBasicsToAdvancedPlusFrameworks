@@ -24,6 +24,23 @@ public class UpdatedDropdown {
         }
         driver.findElement(By.xpath("//input[@id = 'btnclosepaxoption']")).click();
         Assert.assertEquals(driver.findElement(By.xpath("//div[@id = 'divpaxinfo']")).getText(), "5 Adult");
+
+
+        //checking if elements are enabled
+        driver.findElement(By.cssSelector("#Div1")).getDomAttribute("style");
+        driver.findElement(By.xpath("//input[@id='ctl00_mainContent_rbtnl_Trip_1']")).click();
+        if (driver.findElement(By.cssSelector("#Div1")).getDomAttribute("style").contains("0.5")){
+            System.out.println("True");
+            Assert.assertTrue(true);
+        } else {
+            Assert.assertFalse(true);
+        }
+
+
         driver.quit();
+
     }
+
+
+
 }
