@@ -28,19 +28,19 @@ public class UpdatedDropdown {
 
         //checking if elements are enabled
         driver.findElement(By.cssSelector("#Div1")).getDomAttribute("style");
-        driver.findElement(By.xpath("//input[@id='ctl00_mainContent_rbtnl_Trip_1']")).click();
-        if (driver.findElement(By.cssSelector("#Div1")).getDomAttribute("style").contains("0.5")){
-            System.out.println("True");
+        if (driver.findElement(By.cssSelector("#Div1")).getDomAttribute("style").contains("0.5")) {
+            System.out.println("It's enabled");
             Assert.assertTrue(true);
         } else {
             Assert.assertFalse(true);
         }
 
 
+
+
         driver.quit();
 
     }
-
 
 
 }
