@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.swing.*;
 import java.time.Duration;
 
 public class Vezbe {
@@ -106,7 +105,15 @@ public class Vezbe {
         actions.dragAndDrop(element1, element1).perform(); //Prevuci element sa source na target
         actions.release(element1).perform(); //pusta klik, zavrsava clickAndHold ili drag opciju
         actions.sendKeys(element1, "aaaa").perform(); //Simulira kucanje preko tastature
-        actions.moveToElement(element1).click().build(); //Pravi plan akcija ali ne izvrasa - OBAVEZNO proveriti
+        actions.moveToElement(element1).build().perform(); //Pravi plan akcija ali ne izvrasa - OBAVEZNO proveriti
+
+        //Widnow Handling
+
+
+
+
+        //Frames
+
 
 
 
