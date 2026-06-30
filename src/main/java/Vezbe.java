@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -107,12 +108,32 @@ public class Vezbe {
         actions.sendKeys(element1, "aaaa").perform(); //Simulira kucanje preko tastature
         actions.moveToElement(element1).build().perform(); //Pravi plan akcija ali ne izvrasa - OBAVEZNO proveriti
 
-        //Widnow Handling
+        //Widnow Handling - koristi se za regulisanje novih prozora i tabova.
 
+//        Set<String> windows = driver.getWidowHandles() - vraca nam svaki id od svakog otvorenog taba // return Set<String>
+//        Iterator<String> iterator = windows.iterator(); - Iterator je kao pokazivanje prstom na odredjene elemente, ovde prolazi kroz Set stringova pod imenom windows, tako se i poziva.
+//        String parentId = iterator.next(); - ovde nam dolazi na prvi tab, odnosno  perent tab.
+//        String childId = iterator.next(); - ovde nam dolazi na drugi tab, odnosno child tab.
+//        driver.switchTo().window(childId); - ovde prelazimo na novo otvoren tab.
+//        Nakon toga, mozemo vrsiti testiranje na novom tabu;
+//        driver.switchTo().window(perentId); - vracanje na glavni tab
+        String childId = "test";
+        String perentIdl = "test";
 
+        driver.switchTo().window(childId); //Prelazak na prvi sledeci tab
+        driver.switchTo().newWindow(WindowType.TAB); //Otvara novi tab i odmah prelazi na njega
+        driver.switchTo().newWindow(WindowType.WINDOW); //Otvara novi prozor i odmah prelazi na njega
+        driver.close(); //Zatvara trenutno aktivan tab ili prozor, ne vraca automatski na perent tabu, potrebno je vratiti se na perent.
+        driver.quit(); //Zatvara ceo browser
 
 
         //Frames
+
+        driver.switchTo().frame(0); //Prelazak na frame po indksu, prviFrame = 0
+        driver.switchTo().frame("logInFrame"); //Prelazak u frame po ID-u ili NAME atributu.
+        driver.switchTo().frame(driver.findElement(By.xpath("asd"))); //Prelazak u frame po webelementu
+        driver.switchTo().parentFrame(); //Vraca selenium na frame jedan nivo iznad
+        driver.switchTo().defaultContent(); //Vraca se na glavnu stranicu
 
 
 
